@@ -1,0 +1,20 @@
+* {
+  font-family: 'Press Start 2P', !important;
+  font-size: small;
+}
+
+.container-frontpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px
+}
