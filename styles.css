@@ -12,9 +12,21 @@
 }
 
 .filter {
+  flex-wrap: wrap;
+  gap: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   margin: 20px
+}
+
+.filter-flex-item {
+  flex: 0 0 30%; /* Do not grow, do not shrink, start at 30% of the container's width */
+  margin: 10px; /* Adjust as needed */
+  /* Other styles for your items */
+}
+
+.nes-btn {
+  margin-bottom: 20px;
 }
