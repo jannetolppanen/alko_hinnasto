@@ -21,7 +21,13 @@
   margin: 20px
 }
 
-.filter-flex-item {
+.filter-flex-item-large {
+  flex: 0 0 45%; /* Do not grow, do not shrink, start at 30% of the container's width */
+  margin: 10px; /* Adjust as needed */
+  /* Other styles for your items */
+}
+
+.filter-flex-item-small {
   flex: 0 0 30%; /* Do not grow, do not shrink, start at 30% of the container's width */
   margin: 10px; /* Adjust as needed */
   /* Other styles for your items */

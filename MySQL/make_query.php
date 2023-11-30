@@ -1,5 +1,5 @@
 <?php
-require 'db_connect.php'; // Include the database connection
+require_once 'db_connect.php'; // Include the database connection
 
 function makeQuery($sql) {
     global $conn; // Use the connection from db_connect.php
