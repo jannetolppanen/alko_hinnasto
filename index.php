@@ -74,7 +74,6 @@
               placeholder="Minimi">
           </div>
           <div class="nes-field is-inline">
-
             <input type="text" name="hintavali_max" id="hintavali_max_field" class="nes-input is-error"
               placeholder="Maksimi">
           </div>
@@ -94,12 +93,8 @@
       </div>
 
       <!-- Hakunappi -->
-      <?php
-      ?>
       <button type="submit" class="nes-btn is-primary">Päivitä</button>
     </form>
-
-
     <!-- Taulukko -->
     <?php table(); ?>
 

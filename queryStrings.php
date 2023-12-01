@@ -1,12 +1,10 @@
 <?php
-    // Check if the form has been submitted
+    // Poimitaan query parametrit jos annettu
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      // Initialize variables with default values
-      $tyyppi = $valmistusmaa = null;
 
-      // Check if 'tyyppi' is set and not empty, then retrieve the form data
       if (!empty($_POST['tyyppi'])) {
-        $tyyppi = $_POST['tyyppi']; // Ensure the select name is 'tyyppi'
+        $tyyppi = $_POST['tyyppi'];
       }
 
       if (!empty($_POST['valmistusmaa'])) {

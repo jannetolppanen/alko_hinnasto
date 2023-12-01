@@ -72,7 +72,6 @@ $maat = [
     'Brasilia',
     'Wales',
     'Thaimaa',
-    'Azerbaidzhan',
     'Israel',
     'Vietnam',
     'Euroopan unioni',

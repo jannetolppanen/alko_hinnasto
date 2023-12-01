@@ -1,12 +1,12 @@
 <?php
-require_once 'db_connect.php'; // Include the database connection
+require_once 'db_connect.php';
 
 function makeQuery($sql) {
-    global $conn; // Use the connection from db_connect.php
+    global $conn;
 
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        return $result; // Return the result for further processing
+        return $result;
     } else {
         echo "no results";
         return null;

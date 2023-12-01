@@ -22,15 +22,13 @@
 }
 
 .filter-flex-item-large {
-  flex: 0 0 45%; /* Do not grow, do not shrink, start at 30% of the container's width */
-  margin: 10px; /* Adjust as needed */
-  /* Other styles for your items */
+  flex: 0 0 45%;
+  margin: 10px;
 }
 
 .filter-flex-item-small {
-  flex: 0 0 30%; /* Do not grow, do not shrink, start at 30% of the container's width */
-  margin: 10px; /* Adjust as needed */
-  /* Other styles for your items */
+  flex: 0 0 30%;
+  margin: 10px;
 }
 
 .nes-btn {

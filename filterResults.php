@@ -1,6 +1,7 @@
 <?php
 require_once 'parseCSV.php';
 
+// filtteröidään data jos parametrit syötetty
 function filter($tyyppi = null, $valmistusmaa = null, $pullokoko_min = null, $pullokoko_max = null, $hintavali_min = null, $hintavali_max = null, $energiamaara_min = null, $energiamaara_max = null)
 {
     $data = parseCSV('./data/alkon-hinnasto-tekstitiedostona.csv');
@@ -16,26 +17,23 @@ function filter($tyyppi = null, $valmistusmaa = null, $pullokoko_min = null, $pu
         });
     }
 
+    // Loppuosa pois, pilkku pisteeksi ja floatiksi
     if ($pullokoko_min) {
         $data = array_filter($data, function ($row) use ($pullokoko_min) {
-            // Extract the numeric part and replace comma with dot, if necessary
             $pullokokoValue = preg_replace('/[^0-9,]/', '', $row->Pullokoko);
             $pullokokoValue = str_replace(',', '.', $pullokokoValue);
             $pullokokoFloat = floatval($pullokokoValue);
-    
-            // Compare with the minimum value
+
             return $pullokokoFloat >= $pullokoko_min;
         });
     }
 
     if ($pullokoko_max) {
         $data = array_filter($data, function ($row) use ($pullokoko_max) {
-            // Extract the numeric part and replace comma with dot, if necessary
             $pullokokoValue = preg_replace('/[^0-9,]/', '', $row->Pullokoko);
             $pullokokoValue = str_replace(',', '.', $pullokokoValue);
             $pullokokoFloat = floatval($pullokokoValue);
     
-            // Compare with the minimum value
             return $pullokokoFloat <= $pullokoko_max;
         });
     }
