@@ -13,82 +13,96 @@
 </head>
 
 <body>
-  <?php require_once 'dropdownMenuValues.php'; ?>
+  <?php
+  require_once 'dropdownMenuValues.php';
+  require_once 'createTable.php';
+  require_once 'queryStrings.php';
+    ?>
 
   <div class="nes-container with-title is-centered container-frontpage">
     <p class="title">Alkon tuotekatalogi 30.11.2023</p>
 
+    <!-- Filtterit -->
+    <form method="get" action="">
+      <div class="filter">
 
-    <!-- Filtteri -->
-    <div class="filter">
+        <div class="nes-container with-title filter-flex-item-large">
+          <p class="title">Tyyppi</p>
+          <div class="nes-select">
+            <select name="tyyppi" id="tyyppi_select">
+              <option value="" disabled selected hidden>Select...</option>
+              <?php
+              foreach ($kategoriat as $kategoria) {
+                echo "<option value='" . htmlspecialchars($kategoria) . "'>" . htmlspecialchars($kategoria) . "</option>";
+              }
+              ?>
+            </select>
+          </div>
+        </div>
 
-      <div class="nes-container with-title filter-flex-item-large">
-        <p class="title">Tyyppi</p>
-        <div class="nes-select">
-          <select required id="default_select">
-            <option value="" disabled selected hidden>Select...</option>
-            <?php
-            foreach ($kategoriat as $index => $kategoria) {
-              echo "<option value='" . htmlspecialchars($index) . "'>" . htmlspecialchars($kategoria) . "</option>";
-            }
-            ?>
-          </select>
+        <div class="nes-container with-title filter-flex-item-large">
+          <p class="title">Valmistusmaa</p>
+          <div class="nes-select">
+            <select name="valmistusmaa" id="valmistusmaa_select">
+              <option value="" disabled selected hidden>Select...</option>
+              <?php
+              foreach ($maat as $maa) {
+                echo "<option value='" . htmlspecialchars($maa) . "'>" . htmlspecialchars($maa) . "</option>";
+              }
+              ?>
+            </select>
+          </div>
+        </div>
+
+        <div class="nes-container with-title filter-flex-item-small">
+          <p class="title">Pullokoko</p>
+          <div class="nes-field is-inline">
+            <input type="text" name="pullokoko_min" id="pullokoko_min_field" class="nes-input is-success"
+              placeholder="Minimi">
+          </div>
+          <div class="nes-field is-inline">
+
+            <input type="text" name="pullokoko_max" id="pullokoko_max_field" class="nes-input is-error"
+              placeholder="Maksimi">
+          </div>
+        </div>
+
+        <div class="nes-container with-title filter-flex-item-small">
+          <p class="title">Hintaväli</p>
+          <div class="nes-field is-inline">
+            <input type="text" name="hintavali_min" id="hintavali_min_field" class="nes-input is-success"
+              placeholder="Minimi">
+          </div>
+          <div class="nes-field is-inline">
+
+            <input type="text" name="hintavali_max" id="hintavali_max_field" class="nes-input is-error"
+              placeholder="Maksimi">
+          </div>
+        </div>
+
+        <div class="nes-container with-title filter-flex-item-small">
+          <p class="title">Energiamääräväli</p>
+          <div class="nes-field is-inline">
+            <input type="text" name="energiamaara_min" id="energiamaara_min_field" class="nes-input is-success"
+              placeholder="Minimi">
+          </div>
+          <div class="nes-field is-inline">
+            <input type="text" name="energiamaara_max" id="energiamaara_max_field" class="nes-input is-error"
+              placeholder="Maksimi">
+          </div>
         </div>
       </div>
 
-      <div class="nes-container with-title filter-flex-item-large">
-        <p class="title">Valmistusmaa</p>
-        <div class="nes-select">
-          <select required id="default_select">
-            <option value="" disabled selected hidden>Select...</option>
-            <?php
-            foreach ($maat as $index => $maa) {
-              echo "<option value='" . htmlspecialchars($index) . "'>" . htmlspecialchars($maa) . "</option>";
-            }
-            ?>
-          </select>
-        </div>
-      </div>
-
-      <div class="nes-container with-title filter-flex-item-small">
-        <p class="title">Pullokoko</p>
-        <div class="nes-field is-inline">
-          <input type="text" id="inline_field" class="nes-input is-success" placeholder="Minimi">
-        </div>
-        <div class="nes-field is-inline">
-
-          <input type="text" id="error_field" class="nes-input is-error" placeholder="Maksimi">
-        </div>
-      </div>
-
-      <div class="nes-container with-title filter-flex-item-small">
-        <p class="title">Hintaväli</p>
-        <div class="nes-field is-inline">
-          <input type="text" id="inline_field" class="nes-input is-success" placeholder="Minimi">
-        </div>
-        <div class="nes-field is-inline">
-
-          <input type="text" id="error_field" class="nes-input is-error" placeholder="Maksimi">
-        </div>
-      </div>
-
-      <div class="nes-container with-title filter-flex-item-small">
-        <p class="title">Energiamääräväli</p>
-        <div class="nes-field is-inline">
-          <input type="text" id="inline_field" class="nes-input is-success" placeholder="Minimi">
-        </div>
-        <div class="nes-field is-inline">
-          <input type="text" id="error_field" class="nes-input is-error" placeholder="Maksimi">
-        </div>
-      </div>
-    </div>
-
-    <!-- Hakunappi -->
-    <button type="button" class="nes-btn is-primary">Päivitä</button>
+      <!-- Hakunappi -->
+      <?php
+      ?>
+      <button type="submit" class="nes-btn is-primary">Päivitä</button>
+    </form>
 
 
     <!-- Taulukko -->
-    <?php require_once 'createTable.php'; ?>
+    <?php table(); ?>
+
     </tbody>
     </table>
   </div>

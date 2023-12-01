@@ -99,4 +99,6 @@ $kategoriat = [
   'siiderit',
   'alkoholittomat'
 ];
+sort($maat);
+sort($kategoriat);
 ?>
