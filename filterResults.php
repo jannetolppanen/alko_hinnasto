@@ -60,6 +60,8 @@ function filter($tyyppi = null, $valmistusmaa = null, $pullokoko_min = null, $pu
             return isset($row->Energia) &&  $row->Energia <= $energiamaara_max;
         });
     }
+    
+
     return $data;
 }
 ;
