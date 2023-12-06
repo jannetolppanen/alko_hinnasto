@@ -17,10 +17,14 @@
   require_once 'dropdownMenuValues.php';
   require_once 'createTable.php';
   require_once 'queryStrings.php';
+  require_once 'parseCSV.php'; 
+
+
+  $FirstTitle = getTitle('./data/alkon-hinnasto-tekstitiedostona.csv');
     ?>
 
   <div class="nes-container with-title is-centered container-frontpage">
-    <p class="title">Alkon tuotekatalogi 30.11.2023</p>
+  <p class="title"><?php echo ($FirstTitle[0]); ?></p>
 
     <!-- Filtterit -->
     <form method="get" action="">

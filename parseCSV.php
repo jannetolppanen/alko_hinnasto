@@ -1,6 +1,25 @@
 <?php
 require_once 'getData.php';
 
+function getTitle($filePath)
+{
+    if (($handle = fopen($filePath, "r")) !== FALSE) {
+        // Luetaan vain ensimmäinen rivi
+        $FirstTitle = fgetcsv($handle, 0, ',');
+
+        if (!$FirstTitle) {
+            fclose($handle);
+            return null;
+        }
+
+        fclose($handle);
+
+        return $FirstTitle;
+    } else {
+        die('failed');
+    }
+}
+
 function parseCSV($filePath)
 {
     if (($handle = fopen($filePath, "r")) !== FALSE) {
