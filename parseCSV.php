@@ -1,5 +1,4 @@
 <?php
-require_once 'getData.php';
 
 function getTitle($filePath)
 {
@@ -57,3 +56,6 @@ function parseCSV($filePath)
         die('failed');
     }
 }
+$csvFilePath = __DIR__ . '/data/alkon-hinnasto-tekstitiedostona.csv';
+$FirstTitle = getTitle($csvFilePath);
+$dataObjects = parseCSV($csvFilePath);

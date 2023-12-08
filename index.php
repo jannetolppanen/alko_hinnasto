@@ -18,6 +18,9 @@
   require_once 'createTable.php';
   require_once 'queryStrings.php';
   require_once 'parseCSV.php'; 
+  if (isset($_POST['updateData'])){
+    require_once 'getdata.php';
+  }
 
 
   $FirstTitle = getTitle('./data/alkon-hinnasto-tekstitiedostona.csv');
@@ -98,6 +101,10 @@
 
       <!-- Hakunappi -->
       <button type="submit" class="nes-btn is-primary">Päivitä</button>
+
+    </form>
+    <form action="" method="post">
+      <button type="submit" name="updateData" class="nes-btn">Lataa tiedosto</button>
     </form>
     <!-- Taulukko -->
     <?php table(); ?>
