@@ -98,11 +98,11 @@ function table()
         "</td><td>" . htmlspecialchars($row->Tyyppi) .
         "</td><td>" . htmlspecialchars($row->Valmistusmaa) .
         "</td><td>" . htmlspecialchars($row->Vuosikerta) .
-        "</td><td>" . htmlspecialchars($row->Alkoholi) .
-        "</td><td>" . htmlspecialchars($row->Energia) .
+        "</td><td>" . htmlspecialchars($row->{'Alkoholi-%'}) .
+        "</td><td>" . htmlspecialchars($row->{'Energia kcal/100 ml'}) .
         "</td></tr>";
     }
-
+    
     echo "</tbody></table></div>";
   } else {
     echo "Ei tuloksia";
